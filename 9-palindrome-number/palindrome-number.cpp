@@ -1,18 +1,17 @@
 class Solution {
 public:
-//swapnil
-    bool isPalindrome(int x) {
-         if(x<0)
-        {
+    bool isPalindrome(long long x) {
+        if(x<0){
             return false;
         }
-        long ans=0;
-        long b=x;
-        while(x)
-        {
-            ans=ans*10+x%10;
-            x/=10;
+        long long temp=x,r=0;
+        while(x){
+            r=(r*10)+(x%10);
+            x=x/10;
         }
-        return ans==b;
+        if(temp != r){
+            return false;
+        }
+        return true;
     }
 };
